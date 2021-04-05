@@ -19,10 +19,11 @@ public class Line {
      */
 
     private double m;
-    private double b;
+    private double b = Double.POSITIVE_INFINITY;
 
-    private Point p1;
-    private Point p2;
+    //private Point p1;     //do i need these?
+    //private Point p2;
+
     /**
      * Test to see if two double-precision floating-point values are "equal." The
      * values are considered equal when their difference is small.
@@ -58,7 +59,7 @@ public class Line {
      * @throws IllegalArgumentException if the two points are the same
      * @see Point
      */
-    public Line(Point p1, Point p2) {
+    public Line(Point p1, Point p2) throws IllegalArgumentException {
         this.p1 = p1;
         this.p2 = p2;
 
