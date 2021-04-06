@@ -60,13 +60,23 @@ public class Line {
      * @see Point
      */
     public Line(Point p1, Point p2) throws IllegalArgumentException {
-        this.p1 = p1;
-        this.p2 = p2;
-
-        if (p1 == p2){
+        //what kind of line is this?
+        if ((p1.x == p2.x) && (p1.y == p2.y)){
             throw new IllegalArgumentException();
+        }else if(p1.x == p2.x){
+            this.m = Double.POSITIVE_INFINITY;
+            this.b = (double)p1.x;
+        }else{
+            this.m = ((p2.y - p1.y) / (p2.x - p1.x));
+            double b1 =  p1.y - (this.m * p1.x);
+            double b2 =  p2.y - (this.m * p2.x);
+        
+            if (equals(b1,b2,0.0001)){
+                this.b = b1;
+            }
         }
     }
+
 
     /**
      * Returns the slope of the line
@@ -75,8 +85,7 @@ public class Line {
      *         is vertical
      */
     public double slope() {
-        double slope2 = ((p2.y - p1.y) / (p2.x - p1.x));
-        return slope2;
+        return this.m;
     }
 
     /**
@@ -90,16 +99,7 @@ public class Line {
      *         vertical
      */
     public double intercept() {
-        double slope = slope();
-        double inter = 0.0;
-        if (p1.x == p2.x){
-            inter = p1.x;
-        }else if(p1.y == p2.y){
-            inter = p1.y;
-        }else {
-            inter = (p1.y - (slope * p1.x));
-        }
-        return inter;
+        return this.b;
     }
 
     /**
@@ -111,13 +111,24 @@ public class Line {
      * @see Point
      */
     public Point intersection(Line other) {
-        //x = (b2 - b1)/(m1 - m2)
+        if(equals(this.m,other.m,0.0001)){ //to be sure they are not the same line
+            return null;
+        }
+        //if neither is vert
         double x = 0;
         double y = 0;
-
-        x = ((other.b - b) / (other.m - m));
-        y = ((this.m * (x)) + this.b);
-
+        if ((this.m != Double.POSITIVE_INFINITY)  && (other.m != Double.POSITIVE_INFINITY)) {
+            x = ((other.b - this.b) / (this.m - other.m));
+            y = ((this.m * x) + (this.b));
+        }
+//if one line is vert
+        if (this.m == Double.POSITIVE_INFINITY) {
+            x = this.b;
+            y = ((other.m * x) + (other.b));
+        } else if (other.m == Double.POSITIVE_INFINITY) {
+            x = other.b;
+            y = this.m * x + this.b;
+        }
         return new Point(x, y);
     }
 
@@ -127,7 +138,39 @@ public class Line {
      */
     @Override
     public String toString() {
-        // Replace with your code
-        return "LINE EQUATION";
+
+        String yeq = "y = ";
+		String slope = "";
+		String inter = "";
+		slope = String.format("%.2f", m) + String.format("x ");
+		inter = String.format("%.2f", b);
+		if (m == Double.POSITIVE_INFINITY){return ("x = " + String.format("%.2f", b));}
+		if (equals(m, 0.0, 0.0001)){return ("y = " + String.format("%.2f", b));}
+		if (equals(m, 1.00, 0.0001)){
+			slope = String.format("x ");
+		}else if(equals(m, -1.00, 0.0001)){
+			slope = String.format("-x ");
+		}
+		if (b > 0){
+			inter = String.format("+ " + "%.2f", Math.abs(b));
+		}else if (b < 0){
+			inter = String.format("- " + "%.2f", Math.abs(b));
+		}else {
+			inter = String.format(" ");
+		}
+		String finProd = (yeq + slope + inter);
+		return finProd;
+
+       /* String posNeg = "";
+
+        if(this.b >= 0){
+            posNeg = "+";
+        }else{
+            posNeg = "-";
+        }*/
+
+        /*Double slopef = this.m;
+        Double intercept = this.b;
+        return "y = " + slope + "x +" + " " + intercept;*/
     }
 }

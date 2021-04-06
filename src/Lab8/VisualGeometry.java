@@ -302,6 +302,9 @@ public class VisualGeometry {
      * @param args unused
      */
     public static void main(String[] args) {
+        System.out.println(new Point(0, 0).distance(new Point(1, 1)));
+        System.out.println(new Line(0, 10).intersection(new Line(new Point(0, 0),new Point(1, 1))));
+        System.out.println(new Line(new Point(5,5), new Point(5,5)));
         SwingUtilities.invokeLater(() -> {
             new ApplicationWindow("Visual Geometry", 100, 100, new GraphicalPanel(600, 600));
         });
