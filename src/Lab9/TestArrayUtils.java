@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class TestArrayUtils {
+    //START OF TESTS FOR MAXIMUM METHOD
     @Test
     public void testMaxInArr() {                                        //1m. testing maximum method basic functionality (BF) and BF with neg numbers
         int [] a = {23, 5, -6, 9 ,200};
@@ -63,7 +64,7 @@ public class TestArrayUtils {
     
     @Test
     public void testMaxOfAllNegNums(){                                  //8m. testing for if all nums are negative nums
-        int [] a = {-4, -5, -2, -9, -10, -50}
+        int [] a = {-4, -5, -2, -9, -10, -50};
         int expected = -2;
         int maxNumIna = ArrayUtils.maximum(a);
         assertEquals(expected, maxNumIna);
@@ -88,6 +89,7 @@ public class TestArrayUtils {
     //testing for if the array is null (test for exceptions)
 
 
+    //START OF TESTS FOR ASCENDING METHOD
     @Test
     public void testAscending() {                                       //1a. testing basic functionality (BF) and BF with negs
         int[] a = {-10, -0, 4, 6, 9, 2};
@@ -102,15 +104,50 @@ public class TestArrayUtils {
         assertEquals(false, test);
     }
 
+    @Test
+    public void testAscendingIfSorted(){                                //3a. testing for if the array is already sorted
+        int [] a = {2, 4, 6, 8, 9, 10, 5000};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(true, test);
+    }
 
-    //POSSIBLE TRIP-UPS:
-    //if the array is already sorted
-    //if the array is all neg
-    //if the array is descending
-    //Returns true if all the elements in the array appear in non-descending order
-    //duplicates
-    //isAscending should return true when passed an empty array
+    @Test
+    public void testAscendingIfAllNeg(){                                //4a. testing for if the array is all negative nums
+        int [] a = {-3, -5, -4, -7, -2};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(false, test);
+    }
 
+    @Test
+    public void testAscendingIfAllSameNums(){                           //5a. testing for if all nums are the same
+        int [] a = {4, 4, 4, 4, 4, 4, 4};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(true, test);                       //WHAT SHOULD THIS RETURN????
+    }
+
+    @Test
+    public void testAscendingIfDesc(){                                  //6a. testing for if the array is descending
+        int [] a = {9, 6, 4, 3, 1, 0, -3};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(false, test);
+    }
+
+    @Test
+    public void testAscendingSomeDupes(){                               //7a. testing for if there are some duplicates
+        int [] a = {5, 9, 6, 9, 1, 3, -5};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(false, test);
+    }
+
+    @Test
+    public void testAscendingIfEmpty(){                                 //8a. testing for if the array is empty
+        int [] a = {};
+        boolean test = ArrayUtils.isAscending(a);
+        assertEquals(true, test);
+    }
+    //DONE WITH THIS METHOD???
+
+    //START OF TESTS FOR FILTER METHOD
     @Test
     public void testFilterBFandNeg(){                                   //1f. testing for basic functionality (BF) and BF with negs
         int [] a = {3, -2, 8, 1, 9, -10};
@@ -198,6 +235,24 @@ public class TestArrayUtils {
         assertArrayEquals(expected, c);
     }
     //DONE WITH FILTER?
+
+    //START OF TESTS FOR ROTATE RIGHT METHOD
+    @Test
+    public void testRotateRightFull(){                                  //1r. testing for if full rotation, back to start
+        int [] a = {4, 8, 1, 3, -5, 0, 2};
+        int [] expected = {3, -5, 0, 2, 4, 8, 1};
+        int [] rotatedArray = ArrayUtils.rotateRight(a, 3); 
+    }
+
+
+    //POSSIBLE TRIP-UPS:
+    //rotation num is 0
+    //rotation num is negative
+    //rotation num is null
+    //no rotation num
+    //no array to rotate - no effect
+    //array is null - throws exception
+
 }
 
 
