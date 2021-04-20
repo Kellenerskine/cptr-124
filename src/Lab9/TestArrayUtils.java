@@ -235,6 +235,8 @@ public class TestArrayUtils {
         assertArrayEquals(expected, c);
     }
     //DONE WITH FILTER?
+    //0,0,19,19
+    //what is index out of bounds
 
     //START OF TESTS FOR ROTATE RIGHT METHOD
     @Test
@@ -334,6 +336,22 @@ public class TestArrayUtils {
         double [] expected = {3.0, 2.0, 4.0, 6.0, 20.0, 1.0, 3.0};
         double [] rolAvgd = ArrayUtils.rollingAverage(a, 1);
         assertArrayEquals(expected, rolAvgd, 0.001);
+    }
+
+    @Test
+    public void rolAvgNumNull(){
+        int [] a = {3, 2, 4, 6, 20, 1, 3};
+        double [] expected = {3, 2, 4, 6, 20, 1, 3};//nothing? //CANT INPUT NULL?
+        double [] rolAvgd = ArrayUtils.rollingAverage(a, null);
+        assertArrayEquals(expected, rolAvgd, 0.001);
+    }
+
+    @Test
+    public void rolAvgArrNull(){
+        int [] a = {null};
+        double [] expected = {null}; //EXCEPTION?
+        double [] rolAvgd = ArrayUtils.rollingAverage(a, 3);
+
     }
     //POSSIBLE TRIP-UPS:
     //array is null
