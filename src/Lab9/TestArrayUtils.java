@@ -253,7 +253,7 @@ public class TestArrayUtils {
         assertArrayEquals(expected, rotatedArray);
     }
 
-    @Test
+    /*@Test
     public void rotNumDec(){                                            //3r. testing to see if the method works when the rotation num is decimal
         int [] a = {4, 8, 5, 3, 6, 0};
         int [] expected = {};
@@ -267,7 +267,7 @@ public class TestArrayUtils {
         int [] expected = {};
         int [] rotatedArray = ArrayUtils.rotateRight(a, -3.5);      //NOT SURE WHAT EXPECTED SHOULD BE!!!
         assertArrayEquals(expected, rotatedArray);
-    }
+    }*/
 
     @Test
     public void rotNumNeg(){                                            //5r. testing to see if the method works when the rotation num is negative
@@ -277,7 +277,7 @@ public class TestArrayUtils {
         assertArrayEquals(expected, rotatedArray);
     }
 
-    @Test
+    /*@Test
     public void rotNumNull(){                                           //6r. testing to see if the method works when the rotation num is null
         int [] a = {4, 8, 5, 3, 6, 0};
         int [] expected = {4, 8, 5, 3, 6, 0};       //IS THIS THE CORRECT EXPECTED, NO CHANGE???
@@ -291,7 +291,7 @@ public class TestArrayUtils {
         int [] expected = {6, 0, 4, 8.9, 5, -3.2};
         int [] rotatedArray = ArrayUtils.rotateRight(a, 2);
         assertArrayEquals(expected, rotatedArray);
-    }
+    }*/
 
     @Test
     public void rotArrEmpty(){                                          //8r. testing to see if the method works when there is nothing in the array
@@ -301,13 +301,13 @@ public class TestArrayUtils {
         assertArrayEquals(expected, rotatedArray);
     }
 
-    @Test
+    /*@Test
     public void rotArrNull(){                                            //9r. testing to see if the method works when the array is null
         int [] a = {null};
         int [] expected = //throw exception             //HOW DO I TEST FOR THROWING AN EXCEPTION???
         int [] rotatedArray = ArrayUtils.rotateRight(a, 2);
         assertArrayEquals(expected, rotatedArray);
-    }
+    }*/
 
     @Test
     public void oneNumInArr(){                                          //7r. testing to see if the method works when there a decimals in the array
@@ -323,11 +323,18 @@ public class TestArrayUtils {
     @Test
     public void rolAvgTest(){                                           //1rr. testing basic functionality of the method
         int [] a = {3, 2, 4, 6, 20, 1, 3};
-        int [] expected = {3.0, 4.0, 10.0, 9.0, 8.0};
-        int [] rolAvgOfArr = ArrayUtils.rollingAverage(a, 3);
+        double [] expected = {3.0, 4.0, 10.0, 9.0, 8.0};
+        double [] rolAvgOfArr = ArrayUtils.rollingAverage(a, 3);
         assertArrayEquals(expected, rolAvgOfArr, 0.001);        //WHATS WRONG HERE???
     }
 
+    @Test
+    public void rolAvgToDub(){                                          //2rr. testing to see the method converts the array to doubles and isnt diff if num = 1
+        int [] a = {3, 2, 4, 6, 20, 1, 3};
+        double [] expected = {3.0, 2.0, 4.0, 6.0, 20.0, 1.0, 3.0};
+        double [] rolAvgd = ArrayUtils.rollingAverage(a, 1);
+        assertArrayEquals(expected, rolAvgd, 0.001);
+    }
     //POSSIBLE TRIP-UPS:
     //array is null
     //arrya is 0
@@ -336,7 +343,6 @@ public class TestArrayUtils {
     //array has negatives
     //num is negative
     //array is decimal already
-    //make sure the array returns the same if no num=1
 }
 
 

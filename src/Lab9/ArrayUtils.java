@@ -82,9 +82,10 @@ public class ArrayUtils {
      * @param a        the array to rotate
      * @param distance the number of positions to rotate toward the back of the
      *                 array
+     * @return 
      * @throws IllegalArgumentException if the array is {@code null}
      */
-    public static void rotateRight(int[] a, int distance) {
+    public static int[] rotateRight(int[] a, int distance) {
         // Add your code
     }
 

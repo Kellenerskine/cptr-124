@@ -48,6 +48,7 @@ public class AddFractions {
 		System.out.printf("%s + %s = %s%n",
 		                  fraction1, Rational.ONE,
 		                  fraction1.add(Rational.ONE));
+		scan.close();
 	}
 
 }
