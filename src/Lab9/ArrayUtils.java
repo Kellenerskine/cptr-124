@@ -1,4 +1,5 @@
 package Lab9;
+//Solomon Hill and Kellen Erskin
 /**
  * A class containing various methods for processing integer arrays
  */
@@ -11,15 +12,20 @@ public class ArrayUtils {
      * @throws IllegalArgumentException if the array is empty or {@code null}
      */
     public static int maximum(int[] a) {
-        //int[] a = {5, 6, 9, 3};
-        int max = 0;
-        for (int i = 0; i < a.length; i++){
-            if (a[i] > max){
-                max = a[i];
-            }
+    	if(a.length == 0 || a == null) {
+    		throw new IllegalArgumentException();
+    	}
+    	int maxValue = a[0];
+        
+    	for(int i = 1; i < a.length; i++) {
+        	
+        	if(a[i] > maxValue) {
+        		maxValue = a[i];	
+        	}
         }
-        return max; // Replace with your code
+    	return maxValue; // Replace with your code
     }
+    
 
     /**
      * Returns true if the elements of array {@code a} are arranged in ascending
@@ -35,11 +41,22 @@ public class ArrayUtils {
      * 
      * @param a the array to examine
      * @return true if the array is sorted; otherwise, false
-     * @throws IllegalArgumentException if the array is null
      */
     public static boolean isAscending(int[] a) {
-        return false; // Replace with your code
+    	if(a == null) {
+    		return false;
+    	}
+    	else if(a.length == 0) {
+	        return true;
+	    }
+    	for(int i = 0; i < a.length - 1; i++) {
+	        if(a[i] > a[i+1]) {
+	        	return false;
+	        }
+	    }
+	    	return true;
     }
+	    	 // Replace with your code
 
     /**
      * Returns a new array that contains the elements of {@code a}, in exactly the
@@ -60,7 +77,14 @@ public class ArrayUtils {
      *         {@code null} if either or both arrays are {@code null}
      */
     public static int[] filter(int[] a, int[] delList) {
-        return null; // Replace with your code
+    	for(int i = 0; i < a.length; i++){
+    	    for(int j = 0; j < delList.length; j++){
+    	        if(a[i] == delList[j]){
+    	     
+    	        }
+    	    }
+    	}
+    	return null; // Replace with your code
     }
 
     /**
@@ -82,10 +106,9 @@ public class ArrayUtils {
      * @param a        the array to rotate
      * @param distance the number of positions to rotate toward the back of the
      *                 array
-     * @return 
      * @throws IllegalArgumentException if the array is {@code null}
      */
-    public static int[] rotateRight(int[] a, int distance) {
+    public static void rotateRight(int[] a, int distance) {
         // Add your code
     }
 

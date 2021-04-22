@@ -17,9 +17,8 @@ public class TestArrayUtils {
     @Test
     public void testMaxEmptyArr(){                                      //2m. testing maximum method for if the array is empty
         int [] a = {};
-        int [] b = {};
         int maxNumIna = ArrayUtils.maximum(a);
-        assertEquals(b, maxNumIna);
+        assertEquals(0, maxNumIna);
     }
 
     @Test 
@@ -92,11 +91,15 @@ public class TestArrayUtils {
     //START OF TESTS FOR ASCENDING METHOD
     @Test
     public void testAscending() {                                       //1a. testing basic functionality (BF) and BF with negs
-        int[] a = {-10, -0, 4, 6, 9, 2};
+        int[] a = {-10, 4, 0, -4, 6, -9, 2};
         boolean test = ArrayUtils.isAscending(a);
         assertEquals(false, test);
     }
 
+    @Test
+    public void testAscendingNegs(){
+
+    }
     @Test
     public void testAscendingIfNull(){                                  //2a. testing for if the array is null, should pass if so
         int [] a = null;
@@ -312,7 +315,7 @@ public class TestArrayUtils {
     }*/
 
     @Test
-    public void oneNumInArr(){                                          //7r. testing to see if the method works when there a decimals in the array
+    public void rotOneNumInArr(){                                          //7r. testing to see if the method works when there a decimals in the array
         int [] a = {4};
         int [] expected = {4};
         int [] rotatedArray = ArrayUtils.rotateRight(a, 2);
@@ -339,6 +342,14 @@ public class TestArrayUtils {
     }
 
     @Test
+    public void rolAvgArrIsZero(){
+        int [] a = {0, 0, 0, 0};
+        double [] expected = {0.0, 0.0, 0.0};
+        double [] rolAvgd = ArrayUtils.rollingAverage(a, 2);
+        assertArrayEquals(expected, rolAvgd, 0.001);
+    }
+
+    /*@Test
     public void rolAvgNumNull(){
         int [] a = {3, 2, 4, 6, 20, 1, 3};
         double [] expected = {3, 2, 4, 6, 20, 1, 3};//nothing? //CANT INPUT NULL?
@@ -352,9 +363,8 @@ public class TestArrayUtils {
         double [] expected = {null}; //EXCEPTION?
         double [] rolAvgd = ArrayUtils.rollingAverage(a, 3);
 
-    }
+    }*/
     //POSSIBLE TRIP-UPS:
-    //array is null
     //arrya is 0
     //num is null
     //num is zero
