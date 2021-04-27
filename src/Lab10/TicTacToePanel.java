@@ -19,7 +19,6 @@ class TicTacToePanel extends GamePanel {
     public TicTacToePanel() {
         super(600, 600);  // You need to keep this statement
         // TODO
-        // Add whatever initialization code you need here
 
     }
 
@@ -27,5 +26,14 @@ class TicTacToePanel extends GamePanel {
     // TODO
     // Override handleMouseRelease and repaintPanel methods
     // to make a viable Tic-Tac-Toe game
-    
+    protected void repaintPanel(Graphics g) {
+       g.drawLine(0, 200, 600, 200);
+       g.drawLine(200, 0, 200, 600);
+       g.drawLine(400, 0, 400, 600);
+       g.drawLine(0, 400, 600, 400);
+
+        g.drawString("X", 200, 200);
+    }
+    protected void handleMouseRelease(int x, int y) {
+    }
 }
