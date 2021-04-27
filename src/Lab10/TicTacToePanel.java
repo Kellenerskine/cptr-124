@@ -12,6 +12,9 @@ class TicTacToePanel extends GamePanel {
     // TODO
     // Add instance variables as needed
     
+    Player[][] stateOfBoard = new Player[3][3];
+
+
     // TODO
     // Add any additional private helper methods you need
     
@@ -20,8 +23,13 @@ class TicTacToePanel extends GamePanel {
         super(600, 600);  // You need to keep this statement
         // TODO
 
-    }
+        for (int row = 0; row < stateOfBoard.length; row++){
+            for (int col = 0; col < stateOfBoard[0].length; col++){
+                stateOfBoard[row][col] = Player.NONE;
+            }
+        }
 
+    }
 
     // TODO
     // Override handleMouseRelease and repaintPanel methods
@@ -32,8 +40,52 @@ class TicTacToePanel extends GamePanel {
        g.drawLine(400, 0, 400, 600);
        g.drawLine(0, 400, 600, 400);
 
-        g.drawString("X", 200, 200);
+        for (int row = 0; row < stateOfBoard.length; row++){
+            for (int col = 0; col < stateOfBoard[0].length; col++) {
+                if (stateOfBoard[row][col] == Player.x){
+                    //convert [row][col] to coordinates
+                    //draw an X on [row][col]
+                    g.drawString("X", );
+                }else{
+                    //convert [row][col] to coordinates
+                    //draw an O on [row][col]
+                    g.drawString("O", );
+                }
+            }
+        }
+
     }
+
+
     protected void handleMouseRelease(int x, int y) {
+        int row;
+        int col;
+        int turnCount = 0;
+
+
+        if (x < 200){
+            col = 0;
+        }else if (x < 400){
+            col = 1;
+        }else{
+            col = 2;
+        }
+        if (y < 200){
+            row = 0;
+        }else if (y < 400){
+            row = 1;
+        }else{
+            row = 2;
+        }
+        turnCount++;
+
+        if (stateOfBoard[row][col] == Player.NONE){
+            if (turnCount % 2 == 0){
+                stateOfBoard[row][col] = Player.x;
+            }else{
+                stateOfBoard[row][col] = Player.o;
+            }
+        }
+
     }
 }
