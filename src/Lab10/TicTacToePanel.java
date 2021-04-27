@@ -82,95 +82,230 @@ class TicTacToePanel extends GamePanel {
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][1] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][1] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][2] == Player.x && stateOfBoard[1][2] == Player.x && stateOfBoard[2][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[0][1] == Player.x && stateOfBoard[0][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[1][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[1][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[2][1] == Player.x && stateOfBoard[2][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[0][2] == Player.x){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.RED);
             g.drawString("X wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][0] == Player.o && stateOfBoard[2][0] == Player.o){                                 //win conditions for player O
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][1] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][1] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][2] == Player.o && stateOfBoard[1][2] == Player.o && stateOfBoard[2][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[0][1] == Player.o && stateOfBoard[0][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[1][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[1][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[2][1] == Player.o && stateOfBoard[2][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[0][2] == Player.o){
-            g.drawRect(0,0,600,600);  
-            g.setColor(Color.GRAY);  
+            g.drawRect(0,0,600,600);
+            g.setColor(Color.GRAY);
             g.fillRect(0,0,600,600);
             g.setColor(Color.BLUE);
             g.drawString("O wins!!", 150, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }else if(stateOfBoard[0][0] != Player.NONE && stateOfBoard[0][1] != Player.NONE && stateOfBoard[0][2] != Player.NONE && stateOfBoard[1][0] != Player.NONE && stateOfBoard[1][1] != Player.NONE && stateOfBoard[1][2] != Player.NONE && stateOfBoard[2][0] != Player.NONE && stateOfBoard[2][1] != Player.NONE && stateOfBoard[2][2] != Player.NONE){
             g.setFont(new Font("Ink Free",Font.BOLD,90));
             g.drawRect(0,0,600,600);  
@@ -178,6 +313,15 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0,0,600,600);
             g.setColor(Color.GREEN);
             g.drawString("Its a TIE!!", 60, 300);
+            g.setColor(Color.BLACK);
+            g.drawRect(252,402,100,25); //button shadow
+            g.fillRect(252,402,100,25);
+            g.setColor(Color.YELLOW);
+            g.drawRect(250,400,100,25); //sketchy button
+            g.fillRect(250,400,100,25);
+            g.setFont(new Font("Ink Free",Font.BOLD,20));
+            g.setColor(Color.BLACK);
+            g.drawString("NEW GAME", 249, 421);
         }
     }
 
@@ -221,7 +365,7 @@ class TicTacToePanel extends GamePanel {
                 }
             }
             System.out.println(stateOfBoard[0][0]);
-            repaint();
+            //repaint();
         }
     }
 }
