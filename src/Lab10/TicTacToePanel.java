@@ -1,7 +1,5 @@
 package Lab10;
 import java.awt.*;
-import javax.swing.*;
-import java.applet.*;
 
 /*TODO
  - wipe screen to display win msg
