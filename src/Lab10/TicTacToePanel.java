@@ -1,6 +1,5 @@
 package Lab10;
 import java.awt.*;
-import javax.swing.*;
 
 @SuppressWarnings("serial")
 class TicTacToePanel extends GamePanel {
@@ -11,7 +10,7 @@ class TicTacToePanel extends GamePanel {
     
     Player[][] stateOfBoard = new Player[3][3];
     
-    /** Creates an empty Tic-Tac-Toe board ready for play */
+    //Creates an empty Tic-Tac-Toe board ready for play
     public TicTacToePanel() {
         super(600, 600);
 
@@ -48,9 +47,43 @@ class TicTacToePanel extends GamePanel {
                     g.setFont(new Font("Ink Free",Font.BOLD,105));
                     g.drawString("O", x -30, y + 25);
                     //g.drawOval(x - 50, y - 50, 100, 100);
-
                 }
             }
+        }
+        
+
+        if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][0] == Player.x && stateOfBoard[2][0] == Player.x){                                         //win conditions for player X
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[0][1] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][1] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[0][2] == Player.x && stateOfBoard[1][2] == Player.x && stateOfBoard[2][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[0][1] == Player.x && stateOfBoard[0][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[1][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[1][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[2][1] == Player.x && stateOfBoard[2][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[0][2] == Player.x){
+            g.drawString("X wins!!", 300, 300);
+        }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][0] == Player.o && stateOfBoard[2][0] == Player.o){                                 //win conditions for player O
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[0][1] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][1] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[0][2] == Player.o && stateOfBoard[1][2] == Player.o && stateOfBoard[2][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[0][1] == Player.o && stateOfBoard[0][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[1][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[1][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[2][1] == Player.o && stateOfBoard[2][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
+        }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[0][2] == Player.o){
+            g.drawString("O wins!!", 300, 300);
         }
 
     }
@@ -85,6 +118,5 @@ class TicTacToePanel extends GamePanel {
                 stateOfBoard[row][col] = Player.o;
             }
         }
-
     }
 }
