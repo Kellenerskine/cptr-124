@@ -35,7 +35,7 @@ public class GamePanel extends JPanel {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent ev) {
-                // React to a mouse press over the panel
+                //React to a mouse press over the panel
                 handleMouseRelease(ev.getX(), ev.getY());
                 repaint();  // Keep this; it instructs the graphical event manager to redraw the panel
             }
