@@ -1,4 +1,7 @@
 package Lab10;
+import java.awt.*;
+import javax.swing.*;
+
 @SuppressWarnings("serial")
 class TicTacToePanel extends GamePanel {
 
@@ -20,11 +23,7 @@ class TicTacToePanel extends GamePanel {
 
     }
 
-    @SuppressWarnings
-    public int playerMarks(){
-        int topLeft, topMid, topRight, midLeft, midMid, midRight, bottomLeft, bottomMid, bottomRight;
-    }
-    
+
     // TODO
     // Override handleMouseRelease and repaintPanel methods
     // to make a viable Tic-Tac-Toe game
