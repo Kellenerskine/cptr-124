@@ -44,23 +44,26 @@ class TicTacToePanel extends GamePanel {
             for (int col = 0; col < stateOfBoard[0].length; col++) {
                 if (stateOfBoard[row][col] == Player.x){
                     //convert [row][col] to coordinates
+                    int x = (((2 * col) + 1) * (600/6));
+                    int y = (((2 * row) + 1) * (600/6));
                     //draw an X on [row][col]
-                    g.drawString("X", );
-                }else{
+                    g.drawString("X", x, y);
+                }else if(stateOfBoard[row][col] == Player.o){
                     //convert [row][col] to coordinates
+                    int x = (((2 * col) + 1) * (600/6));
+                    int y = (((2 * row) + 1) * (600/6));
                     //draw an O on [row][col]
-                    g.drawString("O", );
+                    g.drawString("O", x, y);
                 }
             }
         }
 
     }
 
-
+    int turnCount = 0;
     protected void handleMouseRelease(int x, int y) {
         int row;
         int col;
-        int turnCount = 0;
 
 
         if (x < 200){
@@ -77,6 +80,7 @@ class TicTacToePanel extends GamePanel {
         }else{
             row = 2;
         }
+
         turnCount++;
 
         if (stateOfBoard[row][col] == Player.NONE){
