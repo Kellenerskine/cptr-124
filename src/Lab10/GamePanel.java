@@ -1,4 +1,4 @@
-package Lab10;
+//package Lab10;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
