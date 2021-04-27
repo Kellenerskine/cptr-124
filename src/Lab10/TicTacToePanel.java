@@ -9,19 +9,11 @@ class TicTacToePanel extends GamePanel {
         NONE, x, o
     }
     
-    // TODO
-    // Add instance variables as needed
-    
     Player[][] stateOfBoard = new Player[3][3];
-
-
-    // TODO
-    // Add any additional private helper methods you need
     
     /** Creates an empty Tic-Tac-Toe board ready for play */
     public TicTacToePanel() {
-        super(600, 600);  // You need to keep this statement
-        // TODO
+        super(600, 600);
 
         for (int row = 0; row < stateOfBoard.length; row++){
             for (int col = 0; col < stateOfBoard[0].length; col++){
@@ -30,15 +22,12 @@ class TicTacToePanel extends GamePanel {
         }
 
     }
-
-    // TODO
-    // Override handleMouseRelease and repaintPanel methods
-    // to make a viable Tic-Tac-Toe game
     protected void repaintPanel(Graphics g) {
        g.drawLine(0, 200, 600, 200);
        g.drawLine(200, 0, 200, 600);
        g.drawLine(400, 0, 400, 600);
        g.drawLine(0, 400, 600, 400);
+       //g.setBackground(new Color(25, 25, 25));
 
         for (int row = 0; row < stateOfBoard.length; row++){
             for (int col = 0; col < stateOfBoard[0].length; col++) {
@@ -47,13 +36,19 @@ class TicTacToePanel extends GamePanel {
                     int x = (((2 * col) + 1) * (600/6));
                     int y = (((2 * row) + 1) * (600/6));
                     //draw an X on [row][col]
-                    g.drawString("X", x, y);
+                    g.setColor(Color.RED);
+                    g.setFont(new Font("Ink Free",Font.BOLD,105));
+                    g.drawString("X", x -15, y + 20);
                 }else if(stateOfBoard[row][col] == Player.o){
                     //convert [row][col] to coordinates
                     int x = (((2 * col) + 1) * (600/6));
                     int y = (((2 * row) + 1) * (600/6));
                     //draw an O on [row][col]
-                    g.drawString("O", x, y);
+                    g.setColor(Color.blue);
+                    g.setFont(new Font("Ink Free",Font.BOLD,105));
+                    g.drawString("O", x -30, y + 25);
+                    //g.drawOval(x - 50, y - 50, 100, 100);
+
                 }
             }
         }
