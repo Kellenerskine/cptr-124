@@ -18,7 +18,7 @@ class TicTacToePanel extends GamePanel {
     
     //Creates an empty Tic-Tac-Toe board ready for play
     public TicTacToePanel() {
-        super(600, 600);
+        super(600, 700);
 
         for (int row = 0; row < stateOfBoard.length; row++){
             for (int col = 0; col < stateOfBoard[0].length; col++){
@@ -30,8 +30,8 @@ class TicTacToePanel extends GamePanel {
 
     protected void repaintPanel(Graphics g) {
 
-
-//whats wrong with this?
+        int numWinsX = 0;
+        int numWinsO = 0;
 
         g.drawRect(0,0,600,600);
         g.setColor(Color.WHITE);
@@ -83,7 +83,8 @@ class TicTacToePanel extends GamePanel {
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
             g.setColor(Color.ORANGE);
-            g.drawLine(100, 0, 100, 600);
+            g.drawRect(100, 0, 10, 600);
+            g.fillRect(100, 0, 10, 600);
         }else if(stateOfBoard[0][1] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][1] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -99,6 +100,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(300, 0, 10, 600);
+            g.fillRect(300, 0, 10, 600);
         }else if(stateOfBoard[0][2] == Player.x && stateOfBoard[1][2] == Player.x && stateOfBoard[2][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -114,6 +118,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(500, 0, 10, 600);
+            g.fillRect(500, 0, 10, 600);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[0][1] == Player.x && stateOfBoard[0][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -129,6 +136,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 100, 600, 10);
+            g.fillRect(0, 100, 600, 10);
         }else if(stateOfBoard[1][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[1][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -144,6 +154,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 300, 600, 10);
+            g.fillRect(0, 300, 600, 10);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[2][1] == Player.x && stateOfBoard[2][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -159,6 +172,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 500, 600, 10);
+            g.fillRect(0, 500, 600, 10);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -174,6 +190,12 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawLine(0, 0, 600, 600);
+            g.drawLine(1, 0, 601, 600);
+            g.drawLine(2, 0, 602, 600);
+            g.drawLine(3, 0, 603, 600);
+            g.drawLine(4, 0, 604, 600);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[0][2] == Player.x){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -189,6 +211,12 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawLine(600, 0, 0, 600);
+            g.drawLine(600, 1, 0, 601);
+            g.drawLine(600, 2, 0, 602);
+            g.drawLine(600, 3, 0, 603);
+            g.drawLine(600, 4, 0, 604);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][0] == Player.o && stateOfBoard[2][0] == Player.o){                                 //win conditions for player O
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -204,6 +232,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(100, 0, 10, 600);
+            g.fillRect(100, 0, 10, 600);
         }else if(stateOfBoard[0][1] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][1] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -219,6 +250,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(300, 0, 10, 600);
+            g.fillRect(300, 0, 10, 600);
         }else if(stateOfBoard[0][2] == Player.o && stateOfBoard[1][2] == Player.o && stateOfBoard[2][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -234,6 +268,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(500, 0, 10, 600);
+            g.fillRect(500, 0, 10, 600);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[0][1] == Player.o && stateOfBoard[0][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -249,6 +286,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 100, 600, 10);
+            g.fillRect(0, 100, 600, 10);
         }else if(stateOfBoard[1][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[1][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -264,6 +304,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 300, 600, 10);
+            g.fillRect(0, 300, 600, 10);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[2][1] == Player.o && stateOfBoard[2][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -279,6 +322,9 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawRect(0, 500, 600, 10);
+            g.fillRect(0, 500, 600, 10);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -294,6 +340,12 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawLine(0, 0, 600, 600);
+            g.drawLine(1, 0, 601, 600);
+            g.drawLine(2, 0, 602, 600);
+            g.drawLine(3, 0, 603, 600);
+            g.drawLine(4, 0, 604, 600);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[0][2] == Player.o){
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
@@ -309,6 +361,12 @@ class TicTacToePanel extends GamePanel {
             g.setFont(new Font("Ink Free",Font.BOLD,20));
             g.setColor(Color.BLACK);
             g.drawString("NEW GAME", 249, 421);
+            g.setColor(Color.ORANGE);
+            g.drawLine(600, 0, 0, 600);
+            g.drawLine(600, 1, 0, 601);
+            g.drawLine(600, 2, 0, 602);
+            g.drawLine(600, 3, 0, 603);
+            g.drawLine(600, 4, 0, 604);
         }else if(stateOfBoard[0][0] != Player.NONE && stateOfBoard[0][1] != Player.NONE && stateOfBoard[0][2] != Player.NONE && stateOfBoard[1][0] != Player.NONE && stateOfBoard[1][1] != Player.NONE && stateOfBoard[1][2] != Player.NONE && stateOfBoard[2][0] != Player.NONE && stateOfBoard[2][1] != Player.NONE && stateOfBoard[2][2] != Player.NONE){
             g.setFont(new Font("Ink Free",Font.BOLD,90));
             g.drawRect(0,0,600,600);  
@@ -366,7 +424,6 @@ class TicTacToePanel extends GamePanel {
                     stateOfBoard[row2][col2] = Player.NONE;
                 }
             }
-            System.out.println(stateOfBoard[0][0]);
             repaint();
         }
     }
