@@ -1,3 +1,6 @@
+//Kellen Erskine 
+
+
 //package Lab10;
 import java.awt.*;
 
@@ -19,7 +22,7 @@ class TicTacToePanel extends GamePanel {
     int numDraws = 0;
 
     //winchecker
-    boolean winCheck;
+    boolean winCheck = false;
 
     //testing something?
     int numWinsX2 = 0;
@@ -41,8 +44,6 @@ class TicTacToePanel extends GamePanel {
     }
 
     protected void repaintPanel(Graphics g) {
-
-        winCheck = false;
 
         g.drawRect(0,0,600,600);
         g.setColor(Color.WHITE);
@@ -86,11 +87,14 @@ class TicTacToePanel extends GamePanel {
             }
         }
         
+        if(winCheck){return;}
 
         if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][0] == Player.x && stateOfBoard[2][0] == Player.x){                                         //win conditions for player X
             numWinsX++;
             numWinsX2++;
             winCheck = true;
+
+
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -463,7 +467,7 @@ class TicTacToePanel extends GamePanel {
         int row;
         int col;
 
-        if(!(winCheck == true)){
+        if(!winCheck){
             if (x < 200){
                 col = 0;
             }else if (x < 400){
@@ -487,15 +491,19 @@ class TicTacToePanel extends GamePanel {
 
             if (stateOfBoard[row][col] == Player.NONE){
                 if (turnCount % 2 == 0){
-                    stateOfBoard[row][col] = Player.x;
-                }else{
                     stateOfBoard[row][col] = Player.o;
+                }else{
+                    stateOfBoard[row][col] = Player.x;
                 }
             }
         }
 
 
         if(x > 248 && x < 352 && y > 400 && y < 425){
+
+            winCheck = false;
+            turnCount = 0;
+
             System.out.println("you clicked the button!! :)");
             for (int row2 = 0; row2 < stateOfBoard.length; row2++){
                 for (int col2 = 0; col2 < stateOfBoard[0].length; col2++){
