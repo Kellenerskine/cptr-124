@@ -17,7 +17,15 @@ class TicTacToePanel extends GamePanel {
     int numWinsX = 0;
     int numWinsO = 0;
     int numDraws = 0;
-    
+
+    //winchecker
+    boolean winCheck;
+
+    //testing something?
+    int numWinsX2 = 0;
+    int numWinsO2 = 0;
+    int numDraws2 = 0;
+
     Player[][] stateOfBoard = new Player[3][3];
     
     //Creates an empty Tic-Tac-Toe board ready for play
@@ -34,6 +42,7 @@ class TicTacToePanel extends GamePanel {
 
     protected void repaintPanel(Graphics g) {
 
+        winCheck = false;
 
         g.drawRect(0,0,600,600);
         g.setColor(Color.WHITE);
@@ -80,6 +89,8 @@ class TicTacToePanel extends GamePanel {
 
         if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][0] == Player.x && stateOfBoard[2][0] == Player.x){                                         //win conditions for player X
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -99,6 +110,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(100, 0, 10, 600);
         }else if(stateOfBoard[0][1] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][1] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -118,6 +131,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(300, 0, 10, 600);
         }else if(stateOfBoard[0][2] == Player.x && stateOfBoard[1][2] == Player.x && stateOfBoard[2][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -137,6 +152,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(500, 0, 10, 600);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[0][1] == Player.x && stateOfBoard[0][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -156,6 +173,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 100, 600, 10);
         }else if(stateOfBoard[1][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[1][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -175,6 +194,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 300, 600, 10);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[2][1] == Player.x && stateOfBoard[2][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -194,6 +215,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 500, 600, 10);
         }else if(stateOfBoard[0][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[2][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -216,6 +239,8 @@ class TicTacToePanel extends GamePanel {
             g.drawLine(4, 0, 604, 600);
         }else if(stateOfBoard[2][0] == Player.x && stateOfBoard[1][1] == Player.x && stateOfBoard[0][2] == Player.x){
             numWinsX++;
+            numWinsX2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -238,6 +263,8 @@ class TicTacToePanel extends GamePanel {
             g.drawLine(600, 4, 0, 604);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][0] == Player.o && stateOfBoard[2][0] == Player.o){                                 //win conditions for player O
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -257,6 +284,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(100, 0, 10, 600);
         }else if(stateOfBoard[0][1] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][1] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -276,6 +305,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(300, 0, 10, 600);
         }else if(stateOfBoard[0][2] == Player.o && stateOfBoard[1][2] == Player.o && stateOfBoard[2][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -295,6 +326,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(500, 0, 10, 600);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[0][1] == Player.o && stateOfBoard[0][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -314,6 +347,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 100, 600, 10);
         }else if(stateOfBoard[1][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[1][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -333,6 +368,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 300, 600, 10);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[2][1] == Player.o && stateOfBoard[2][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -352,6 +389,8 @@ class TicTacToePanel extends GamePanel {
             g.fillRect(0, 500, 600, 10);
         }else if(stateOfBoard[0][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[2][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -374,6 +413,8 @@ class TicTacToePanel extends GamePanel {
             g.drawLine(4, 0, 604, 600);
         }else if(stateOfBoard[2][0] == Player.o && stateOfBoard[1][1] == Player.o && stateOfBoard[0][2] == Player.o){
             numWinsO++;
+            numWinsO2++;
+            winCheck = true;
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
@@ -396,6 +437,8 @@ class TicTacToePanel extends GamePanel {
             g.drawLine(600, 4, 0, 604);
         }else if(stateOfBoard[0][0] != Player.NONE && stateOfBoard[0][1] != Player.NONE && stateOfBoard[0][2] != Player.NONE && stateOfBoard[1][0] != Player.NONE && stateOfBoard[1][1] != Player.NONE && stateOfBoard[1][2] != Player.NONE && stateOfBoard[2][0] != Player.NONE && stateOfBoard[2][1] != Player.NONE && stateOfBoard[2][2] != Player.NONE){
             numDraws++;
+            numDraws2++;
+            winCheck = true;
             g.setFont(new Font("Ink Free",Font.BOLD,90));
             g.drawRect(0,0,600,600);  
             g.setColor(Color.GRAY);  
@@ -420,7 +463,9 @@ class TicTacToePanel extends GamePanel {
         int row;
         int col;
 
-        if(numDraws <= turnCount && numWinsO <= turnCount && numWinsX <= turnCount){
+        //numDraws <= turnCount && numWinsO <= turnCount && numWinsX <= turnCount
+
+        if(!(winCheck == true)){
             if (x < 200){
                 col = 0;
             }else if (x < 400){
