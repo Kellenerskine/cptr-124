@@ -463,8 +463,6 @@ class TicTacToePanel extends GamePanel {
         int row;
         int col;
 
-        //numDraws <= turnCount && numWinsO <= turnCount && numWinsX <= turnCount
-
         if(!(winCheck == true)){
             if (x < 200){
                 col = 0;
@@ -495,11 +493,6 @@ class TicTacToePanel extends GamePanel {
                 }
             }
         }
-
-
-
-
-
 
 
         if(x > 248 && x < 352 && y > 400 && y < 425){
