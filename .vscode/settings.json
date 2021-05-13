@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "src/zAssessment2",
         "src/Lab10",
-        "src/zAssessment2"
+        "src/zexperi"
     ]
 }

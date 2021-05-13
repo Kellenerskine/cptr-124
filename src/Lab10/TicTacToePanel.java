@@ -93,8 +93,6 @@ class TicTacToePanel extends GamePanel {
             numWinsX++;
             numWinsX2++;
             winCheck = true;
-
-
             g.drawRect(0,0,600,600);
             g.setColor(Color.GRAY);
             //g.fillRect(0,0,600,600);
